@@ -1,0 +1,1 @@
+I would like to thank my parents, my cousin, my company advisor and my friends who supported me during this thesis. #lorem(50)
