@@ -124,7 +124,7 @@
   )
 
   show heading.where(level: 1): it => {
-    pagebreak(weak: true, to: "odd")
+    pagebreak(weak: true)
     it
   }
 
@@ -152,8 +152,6 @@
   // List of Listings
   list_of(headings.listings, raw)
 
-  pagebreak(weak: true)
-
   // Abbreviations
   register-glossary(abbreviation_list)
   heading(headings.abbreviations)
@@ -161,7 +159,7 @@
     abbreviation_list,
     disable-back-references: true,
   )
-  pagebreak(to: "odd")
+  pagebreak(weak: true)
   [#[] <end-of-roman-numbering>]
 
   // Main content
@@ -207,7 +205,7 @@
     appendix_content
   }
 
-  set heading(numbering: none)
-  declaration_of_honesty(author, location, date)
-  pagebreak(to: "odd")
+  //set heading(numbering: none)
+  //declaration_of_honesty(author, location, date)
+  //pagebreak(to: "odd")
 }

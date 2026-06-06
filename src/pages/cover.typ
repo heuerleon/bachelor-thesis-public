@@ -1,3 +1,5 @@
+#import "../dependencies.typ": orchid
+
 #let cover(
   course,
   university,
@@ -13,17 +15,18 @@
     top + center,
     {
       show title: set text(size: 31pt, weight: 500)
-      set text(size: 18pt)
       
       stack(
         spacing: 3cm,
-        grid(
-          columns: (1fr, 1fr),
-          grid.cell(align: left, image("../res/cover/nordakademie_logo.png", height: .9cm)),
-          grid.cell(align: right, image("../res/cover/otto_logo.png", height: .9cm)),
-        ),
         title(),
-        emph([By #author]),
+        stack(
+          spacing: 10pt,
+          [#text(size: 18pt)[#emph([#author ])] #orchid.generate-link("0009-0009-0589-3112")],
+          h(1cm),
+          [leon.heuer.a22b\@nordakademie.de],
+          [#university],
+          [Elmshorn, Germany],
+        )
       )
     }
   )
@@ -35,9 +38,12 @@
       set strong(delta: 200)
       stack(
         spacing: 10pt,
-        [Bachelor's Thesis submitted for examination in Bachelor's degree],
-        v(18pt),
-        [in the study course #emph(course)],
+        [Submitted on #date.display("[month repr:long] [day], [year]")],
+      )
+      line(stroke: .5pt + black, length: 2cm)
+      stack(
+        spacing: 10pt,
+        [Bachelor's Thesis],
         [at #university],
         [in cooperation with #company],
       )
@@ -48,13 +54,7 @@
         [Secondary Examiner: #strong(supervisors.at(1))],
         [Advisor: #strong(supervisors.at(2))],
       )
-      line(stroke: .5pt + black, length: 2cm)
-      stack(
-        spacing: 10pt,
-        [Submitted on #date.display("[month repr:long] [day], [year]")],
-        [by #author, centuria #centuria, matriculation number #matnr],
-      )
     }
   )
-  pagebreak(weak: true, to: "odd")
+  pagebreak(weak: true)
 }
