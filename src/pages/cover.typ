@@ -23,7 +23,7 @@
           spacing: 10pt,
           [#text(size: 18pt)[#emph([#author ])] #orchid.generate-link("0009-0009-0589-3112")],
           h(1cm),
-          [leon.heuer.a22b\@nordakademie.de],
+          [leon.heuer.a22b\@nordakademie.org],
           [#university],
           [Elmshorn, Germany],
         )
